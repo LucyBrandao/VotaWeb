@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<web-app metadata-complete="true" version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee                       http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <description>
+      Vota Web
+    </description>
+    <display-name>Vota Web</display-name>
+    <servlet>
+        <servlet-name>Login</servlet-name>
+        <servlet-class>controllers.Login</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Home</servlet-name>
+        <servlet-class>controllers.Home</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Authenticate</servlet-name>
+        <servlet-class>controllers.Authenticate</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Register</servlet-name>
+        <servlet-class>controllers.Register</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CreateUser</servlet-name>
+        <servlet-class>controllers.CreateUser</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Inspection</servlet-name>
+        <servlet-class>controllers.InspectorPage</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Voting Requests</servlet-name>
+        <servlet-class>controllers.VotingRequest</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Voting Session</servlet-name>
+        <servlet-class>controllers.VotingSession</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Login</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Home</servlet-name>
+        <url-pattern>/home</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Authenticate</servlet-name>
+        <url-pattern>/authenticate</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>default</servlet-name>
+        <url-pattern>/static/*</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Register</servlet-name>
+        <url-pattern>/register</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CreateUser</servlet-name>
+        <url-pattern>/new</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Inspection</servlet-name>
+        <url-pattern>/inspection</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Voting Requests</servlet-name>
+        <url-pattern>/voting_requests</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Voting Session</servlet-name>
+        <url-pattern>/voting_session</url-pattern>
+    </servlet-mapping>
+</web-app>
