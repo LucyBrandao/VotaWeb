@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 
 /**
  *
- * @author Fabian
+ * @author Lucy
  */
 public class HttpParameterExtractor {
     public static HashMap<String, String> get(HttpServletRequest request) 
@@ -28,7 +28,10 @@ public class HttpParameterExtractor {
         
         for (String parameter : body.split("&")) {
             String[] pair = parameter.split("=");
-            parameters.put(pair[0], pair[1]);
+            if (pair.length == 2)
+                parameters.put(pair[0], pair[1]);
+            else
+                parameters.put(pair[0], "");
         }
         return parameters;
     }

@@ -16,7 +16,7 @@ import services.FakeDB;
 
 /**
  *
- * @author Fabian
+ * @author Lucy
  */
 public class Register extends HttpServlet {
 

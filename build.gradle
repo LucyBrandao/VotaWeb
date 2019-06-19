@@ -21,6 +21,7 @@ repositories {
 }
 
 def jspSrc = "$projectDir/src/main/webapp"
+def resDir = "$projectDir/src/main/resources"
 
 dependencies {
     // TODO: Add dependencies here ...
@@ -30,4 +31,7 @@ dependencies {
     providedCompile 'javax.servlet:javax.servlet-api:3.1.0'
     compile 'javax.servlet.jsp:javax.servlet.jsp-api:2.3.3'
     compile 'org.glassfish:javax.json:1.0.2'
+    compile 'org.postgresql:postgresql:42.2.5.jre7'
+    implementation 'org.hibernate:hibernate-core:5.3.7.Final'
+    implementation 'com.google.code.gson:gson:2.8.5'
 }

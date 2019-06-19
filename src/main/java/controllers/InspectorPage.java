@@ -7,14 +7,18 @@ package controllers;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import models.Election;
+import models.Voter;
 
 /**
  *
- * @author Fabian
+ * @author Lucy
  */
 public class InspectorPage extends HttpServlet {
 
@@ -29,6 +33,19 @@ public class InspectorPage extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
+        ServletContext context = getServletContext();
+        HttpSession session = request.getSession();
+        
+        Election election = Election.class.cast(context.getAttribute("election"));
+        Voter voter = Voter.class.cast(session.getAttribute("voter"));
+        
+        if (voter == null) {
+            response.sendRedirect("login");
+        } else if (voter.role.level == 1) {
+            response.sendRedirect("home");
+        }
+        
         try{
             response.setContentType("text/html;charset=UTF-8");
             request.getServletContext().getRequestDispatcher("/dynamic/jsp/inspection.jsp").forward(request, response);

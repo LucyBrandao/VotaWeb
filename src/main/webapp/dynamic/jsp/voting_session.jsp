@@ -1,7 +1,7 @@
 <%-- 
     Document   : voting_session
     Created on : 30/04/2019, 04:59:45
-    Author     : Fabian
+    Author     : Lucy
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

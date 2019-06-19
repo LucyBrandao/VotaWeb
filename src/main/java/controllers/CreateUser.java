@@ -5,6 +5,9 @@
  */
 package controllers;
 
+import com.google.gson.Gson;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Collections;
@@ -16,17 +19,23 @@ import javax.servlet.http.HttpServletResponse;
 import libs.HttpParameterExtractor;
 import models.Voter;
 
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+import javax.persistence.Query;
+
 /**
  *
- * @author Fabian
+ * @author Lucy
  */
 public class CreateUser extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
         response.setContentType("application/json");
         response.setCharacterEncoding("UTF-8");
-        if (Voter.session.equals(request.getSession()))
+        if (Voter.session.getId().equals(request.getSession().getId()))
             System.out.println("Session corresponding.");
         request.setCharacterEncoding("UTF-8");
         
@@ -40,18 +49,35 @@ public class CreateUser extends HttpServlet {
         System.out.printf("Recebi os parâmetros: {%s} {%s} {%s} {%s}.\n", username, password, name, cpf);
         
         Voter voter = new Voter(username, password, name, cpf);
-        voter.save();
-        Voter confirm = Voter.findByUsername(username);
+        boolean saved = voter.save();
         PrintWriter out = response.getWriter();
         System.out.println("Ok");
+        
+        Gson gson = new Gson();
+        JsonObject jobj = new JsonObject();
+        JsonArray jarr = new JsonArray();
+        
+        
         try {
-            if (confirm != null) {
+            if (saved) {
                 //request.getServletContext().getRequestDispatcher("/dynamic/jsp/login.jsp").forward(request, response);
                 //response.sendRedirect("/Vota/");
-                out.print("{\"status\": \"success\", \"message\": \"Created user " + confirm.getName() + "\"}");
+                jobj.addProperty("status", true);
+                out.print("{\"status\": \"success\", \"message\": \"Created user " + voter.name + "\"}");
                 out.flush();
             } else {
-                out.print("{\"failed\": \"failed\", \"message\": \"User not saved.\"}");
+                jobj.addProperty("status", false);
+                for (String error : voter.errors) {
+                    JsonObject jerrobj = new JsonObject();
+                    jerrobj.addProperty("field", error.split(" ")[0]);
+                    jerrobj.addProperty("message", error);
+                    
+                    jarr.add(jerrobj);
+                    //String key = error.split(" ")[0];
+                    //jobj.addProperty(key, error);
+                }
+                jobj.add("errors", jarr);
+                out.print(jobj.toString());//"{\"failed\": \"failed\", \"message\": \"User not saved.\"}");
                 out.flush();
             }
         } catch (Exception e) {

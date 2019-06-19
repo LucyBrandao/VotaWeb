@@ -10,7 +10,7 @@ import models.Voter;
 
 /**
  *
- * @author Fabian
+ * @author Lucy
  */
 public class FakeDB {
     private static FakeDB db;
@@ -46,7 +46,7 @@ public class FakeDB {
     }
     
     private void saveVoter(Voter voter) {
-        if (Voter.findByUsername(voter.getUsername()) == null) {
+        if (Voter.findByUsername(voter.username) == null) {
             voters.add(voter);
         } else {
             int index = voters.indexOf(voter);

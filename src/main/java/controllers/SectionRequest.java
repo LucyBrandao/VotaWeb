@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author Fabian
+ * @author Lucy
  */
 public class SectionRequest extends HttpServlet {
 

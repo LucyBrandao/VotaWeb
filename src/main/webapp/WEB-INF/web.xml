@@ -41,10 +41,54 @@ and open the template in the editor.
         <servlet-name>Voting Session</servlet-name>
         <servlet-class>controllers.VotingSession</servlet-class>
     </servlet>
-    <servlet-mapping>
-        <servlet-name>Login</servlet-name>
-        <url-pattern>/</url-pattern>
-    </servlet-mapping>
+    <servlet>
+        <servlet-name>Admin</servlet-name>
+        <servlet-class>controllers.admin.Home</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Authenticate Admin</servlet-name>
+        <servlet-class>controllers.admin.Authenticate</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Election Period Checker</servlet-name>
+        <servlet-class>controllers.ElectionPeriodChecker</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Ballot Box</servlet-name>
+        <servlet-class>controllers.BallotBox</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Request Response</servlet-name>
+        <servlet-class>controllers.RequestResponse</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Ballot Box Display</servlet-name>
+        <servlet-class>controllers.BallotBoxDisplay</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Enable Voting</servlet-name>
+        <servlet-class>controllers.EnableVoting</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Load Candidate</servlet-name>
+        <servlet-class>controllers.LoadCandidate</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Confirm Vote</servlet-name>
+        <servlet-class>controllers.ConfirmVote</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Reporter</servlet-name>
+        <servlet-class>controllers.Reporter</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Bulletin</servlet-name>
+        <servlet-class>controllers.Bulletin</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Result</servlet-name>
+        <servlet-class>controllers.ElectionResult</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Home</servlet-name>
         <url-pattern>/home</url-pattern>
@@ -76,5 +120,58 @@ and open the template in the editor.
     <servlet-mapping>
         <servlet-name>Voting Session</servlet-name>
         <url-pattern>/voting_session</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Admin</servlet-name>
+        <url-pattern>/admin</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Authenticate Admin</servlet-name>
+        <url-pattern>/admin/authenticate</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Login</servlet-name>
+        <url-pattern>/login</url-pattern>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Election Period Checker</servlet-name>
+        <url-pattern>/is_election_period</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Ballot Box</servlet-name>
+        <url-pattern>/ballot_box</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Request Response</servlet-name>
+        <url-pattern>/request_response</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Ballot Box Display</servlet-name>
+        <url-pattern>/display</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Enable Voting</servlet-name>
+        <url-pattern>/enable_voting</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Load Candidate</servlet-name>
+        <url-pattern>/load_candidate</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Confirm Vote</servlet-name>
+        <url-pattern>/confirm_vote</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Reporter</servlet-name>
+        <url-pattern>/reporter</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Bulletin</servlet-name>
+        <url-pattern>/bulletin</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Result</servlet-name>
+        <url-pattern>/result</url-pattern>
     </servlet-mapping>
 </web-app>

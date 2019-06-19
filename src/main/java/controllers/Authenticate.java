@@ -5,8 +5,10 @@
  */
 package controllers;
 
+import helpers.VotingRequestHelper;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.time.OffsetDateTime;
 import java.util.HashMap;
 import java.util.stream.Collectors;
 import javax.servlet.ServletContext;
@@ -14,30 +16,29 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import javax.servlet.http.Part;
 import libs.HttpParameterExtractor;
+import models.Election;
+import models.Report;
 import models.Voter;
 
 /**
  *
- * @author Fabian
+ * @author Lucy
  */
 public class Authenticate extends HttpServlet {
 
-    /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
         if (Voter.session.equals(request.getSession()))
             System.out.println("Session corresponding.");
+        
+        HttpSession session = request.getSession(true);
+        
+        if (session.isNew()) System.out.println("Nova sessão");
+        else System.out.println("Sessão existente");
         
         HashMap<String, String> parameters = HttpParameterExtractor.get(request);
         
@@ -45,8 +46,11 @@ public class Authenticate extends HttpServlet {
         String password = parameters.get("password");
         
         Voter voter = Voter.findByUsername(username);
+        boolean authenticated = false;
+        if (voter != null) authenticated = voter.password.equals(password);
+        System.out.println("Cheguei aqui");
         try {
-            if (voter == null) {
+            if (!authenticated) {
                 System.out.println("Usuário não encontrado.");
                 response.setContentType("application/json");
                 response.setCharacterEncoding("UTF-8");
@@ -54,6 +58,36 @@ public class Authenticate extends HttpServlet {
                 out.print("{\"status\": \"fail\", \"message\": \"User not found " + username + "\"}");
                 out.flush();
             } else {
+                
+                ServletContext context = getServletContext();
+                
+                Election election = Election.class.cast(context.getAttribute("election"));
+                
+                if (election == null) {
+                    
+                    OffsetDateTime now = OffsetDateTime.now();
+                    election = new Election();
+                    election.created_at = now;
+                    election.startsAt = now;
+                    election.endsAt = now.plusMinutes(3);
+                    election.save();
+
+
+                    context.setAttribute("election", election);
+                }
+        
+                Report report = new Report();
+                
+                report.election = election;
+                report.message = String.format("Usuário %s; Autenticação no sistema", voter.username);
+                report.save();
+                
+                voter.sessionId = session.getId();
+                voter.save();
+                session.setAttribute("voter", voter);
+                //if (voter.)
+                //boolean added = VotingRequestHelper.pendings.add(voter);
+                //if (added) System.out.println("Adicionado " + VotingRequestHelper.pendings.size());
                 System.out.println("Parece tudo OK.");
                 response.setContentType("application/json");
                 response.setCharacterEncoding("UTF-8");
@@ -67,40 +101,18 @@ public class Authenticate extends HttpServlet {
         }
     }
 
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-    /**
-     * Handles the HTTP <code>GET</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
     }
 
-    /**
-     * Handles the HTTP <code>POST</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
     }
 
-    /**
-     * Returns a short description of the servlet.
-     *
-     * @return a String containing servlet description
-     */
     @Override
     public String getServletInfo() {
         return "Short description";

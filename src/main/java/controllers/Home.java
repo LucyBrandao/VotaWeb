@@ -16,12 +16,18 @@ import models.Voter;
 
 /**
  *
- * @author Fabian
+ * @author Lucy
  */
 public class Home extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         //response.sendRedirect("/Vota/dynamic/jsp/login.jsp");
+        
+        Voter voter = Voter.class.cast(request.getSession().getAttribute("voter"));
+        if (voter == null)
+        {
+            response.sendRedirect("login");
+        }
 
         //ServletContext sc = request.getServletContext();
         try{

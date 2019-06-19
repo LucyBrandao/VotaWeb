@@ -12,11 +12,12 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import models.Voter;
 
 /**
  *
- * @author Fabian
+ * @author Lucy
  */
 public class Login extends HttpServlet {
 
@@ -33,14 +34,29 @@ public class Login extends HttpServlet {
             throws ServletException, IOException {
         if (Voter.session == null)
             Voter.session = request.getSession();
+        
+        HttpSession session = request.getSession();
+        
+        Voter voter = Voter.class.cast(session.getAttribute("voter"));
+        response.setContentType("text/html;charset=UTF-8");
+        if (voter != null && session.getId().equals(voter.sessionId)) {
+            try {
+                response.sendRedirect("home");
+                //request.getServletContext().getRequestDispatcher("/dynamic/jsp/home.jsp").include(request, response);
+            } catch (Exception e) {
+            }
+        } else {
+            session.setAttribute("voter", null);
+            //response.setContentType("text/html;charset=UTF-8");
+            try {
+                request.getServletContext().getRequestDispatcher("/dynamic/jsp/login.jsp").include(request, response);
+                //sc.getRequestDispatcher("/dynamic/jsp/login.jsp").forward(request, response);
+            } catch (Exception e) {
+            }
+        }
         //request.setAttribute("fail", "true");
         //ServletContext sc = request.getServletContext();
-        response.setContentType("text/html;charset=UTF-8");
-        try {
-            request.getServletContext().getRequestDispatcher("/dynamic/jsp/login.jsp").include(request, response);
-            //sc.getRequestDispatcher("/dynamic/jsp/login.jsp").forward(request, response);
-        } catch (Exception e) {
-        }
+        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

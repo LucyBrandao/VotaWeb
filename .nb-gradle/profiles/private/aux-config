@@ -5,37 +5,81 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
       <group>
-        <file>file:/D:/Vota/src/main/java/controllers/VotingSession.java</file>
-        <file>file:/D:/Vota/src/main/webapp/dynamic/jsp/login.jsp</file>
-        <file>file:/D:/Vota/src/main/java/controllers/CreateUser.java</file>
-        <file>file:/D:/Vota/src/main/java/controllers/Home.java</file>
-        <file>file:/D:/Vota/src/main/webapp/dynamic/jsp/home.jsp</file>
-        <file>file:/D:/Vota/src/main/webapp/WEB-INF/web.xml</file>
-        <file>file:/D:/Vota/src/main/webapp/dynamic/jsp/inspection.jsp</file>
-        <file>file:/D:/Vota/src/main/java/models/Role.java</file>
-        <file>file:/D:/Vota/src/main/webapp/dynamic/jsp/voting_session.jsp</file>
-        <file>file:/D:/Vota/src/main/java/controllers/Register.java</file>
-        <file>file:/D:/Vota/src/main/java/controllers/SectionRequest.java</file>
-        <file>file:/D:/Vota/src/main/webapp/dynamic/jsp/register.jsp</file>
-        <file>file:/D:/Vota/src/main/java/controllers/InspectorPage.java</file>
+        <file>file:/P:/java/VotaWeb-master/src/main/java/controllers/VotingSession2.java</file>
+        <file>file:/P:/java/VotaWeb-master/src/main/java/controllers/LoadCandidate.java</file>
+        <file>file:/P:/java/VotaWeb-master/src/main/java/controllers/Register.java</file>
+        <file>file:/P:/java/VotaWeb-master/src/main/java/models/Voter.java</file>
+        <file>file:/P:/java/VotaWeb-master/src/main/resources/META-INF/persistence.xml</file>
+        <file>file:/P:/java/VotaWeb-master/src/main/java/services/DB.java</file>
+        <file>file:/P:/java/VotaWeb-master/src/main/java/controllers/InspectorPage.java</file>
+        <file>file:/P:/java/VotaWeb-master/src/main/webapp/dynamic/jsp/register.jsp</file>
+        <file>file:/P:/java/VotaWeb-master/src/main/webapp/dynamic/jsp/admin/home.jsp</file>
+        <file>file:/P:/java/VotaWeb-master/src/main/java/controllers/Authenticate.java</file>
+        <file>file:/P:/java/VotaWeb-master/src/main/webapp/static/css/ballot_box.css</file>
+        <file>file:/P:/java/VotaWeb-master/src/main/webapp/dynamic/jsp/login.jsp</file>
+        <file>file:/P:/java/VotaWeb-master/src/main/java/controllers/SectionRequest.java</file>
+        <file>file:/P:/java/VotaWeb-master/src/main/webapp/WEB-INF/classes/import.sql</file>
+        <file>file:/P:/java/VotaWeb-master/src/main/java/libs/HttpParameterExtractor.java</file>
+        <file>file:/P:/java/VotaWeb-master/src/main/webapp/dynamic/jsp/ballot_box.jsp</file>
+        <file>file:/P:/java/VotaWeb-master/src/main/java/models/Election.java</file>
+        <file>file:/P:/java/VotaWeb-master/src/main/webapp/dynamic/jsp/voting_requests.jsp</file>
+        <file>file:/P:/java/VotaWeb-master/src/main/java/controllers/RequestResponse.java</file>
+        <file>file:/P:/java/VotaWeb-master/src/main/webapp/dynamic/jsp/inspection.jsp</file>
+        <file>file:/P:/java/VotaWeb-master/src/main/java/controllers/VotingRequest.java</file>
+        <file>file:/P:/java/VotaWeb-master/src/main/webapp/dynamic/jsp/home.jsp</file>
+        <file>file:/P:/java/VotaWeb-master/src/main/java/controllers/CreateUser.java</file>
+        <file>file:/P:/java/VotaWeb-master/src/main/java/helpers/BallotBoxDisplayHelper.java</file>
+        <file>file:/P:/java/VotaWeb-master/src/main/webapp/WEB-INF/web.xml</file>
+        <file>file:/P:/java/VotaWeb-master/src/main/java/controllers/BallotBoxDisplay.java</file>
+        <file>file:/P:/java/VotaWeb-master/src/main/java/helpers/VotingRequestHelper.java</file>
+        <file>file:/P:/java/VotaWeb-master/src/main/java/models/VotingSession.java</file>
+        <file>file:/P:/java/VotaWeb-master/src/main/java/controllers/NewServlet.java</file>
+        <file>file:/P:/java/VotaWeb-master/src/main/java/controllers/BallotBox.java</file>
+        <file>file:/P:/java/VotaWeb-master/src/main/java/models/Vote.java</file>
+        <file>file:/P:/java/VotaWeb-master/src/main/java/controllers/Home.java</file>
+        <file>file:/P:/java/VotaWeb-master/src/main/java/controllers/EnableVoting.java</file>
+        <file>file:/P:/java/VotaWeb-master/src/main/java/models/Candidate.java</file>
       </group>
     </open-files>
     <editor-bookmarks lastBookmarkId="0" xmlns="http://www.netbeans.org/ns/editor-bookmarks/2"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
       <group>
-        <file>file:/D:/Vota/src/main/java/controllers/VotingSession.java</file>
-        <file>file:/D:/Vota/src/main/webapp/dynamic/jsp/login.jsp</file>
-        <file>file:/D:/Vota/src/main/java/controllers/CreateUser.java</file>
-        <file>file:/D:/Vota/src/main/java/controllers/Home.java</file>
-        <file>file:/D:/Vota/src/main/webapp/dynamic/jsp/home.jsp</file>
-        <file>file:/D:/Vota/src/main/webapp/WEB-INF/web.xml</file>
-        <file>file:/D:/Vota/src/main/webapp/dynamic/jsp/inspection.jsp</file>
-        <file>file:/D:/Vota/src/main/java/models/Role.java</file>
-        <file>file:/D:/Vota/src/main/webapp/dynamic/jsp/voting_session.jsp</file>
-        <file>file:/D:/Vota/src/main/java/controllers/Register.java</file>
-        <file>file:/D:/Vota/src/main/java/controllers/SectionRequest.java</file>
-        <file>file:/D:/Vota/src/main/webapp/dynamic/jsp/register.jsp</file>
-        <file>file:/D:/Vota/src/main/java/controllers/InspectorPage.java</file>
+        <file>file:/P:/java/VotaWeb-master/src/main/java/controllers/VotingSession2.java</file>
+        <file>file:/P:/java/VotaWeb-master/src/main/java/controllers/LoadCandidate.java</file>
+        <file>file:/P:/java/VotaWeb-master/src/main/java/controllers/Register.java</file>
+        <file>file:/P:/java/VotaWeb-master/src/main/java/models/Voter.java</file>
+        <file>file:/P:/java/VotaWeb-master/src/main/resources/META-INF/persistence.xml</file>
+        <file>file:/P:/java/VotaWeb-master/src/main/java/services/DB.java</file>
+        <file>file:/P:/java/VotaWeb-master/src/main/java/controllers/InspectorPage.java</file>
+        <file>file:/P:/java/VotaWeb-master/src/main/webapp/dynamic/jsp/register.jsp</file>
+        <file>file:/P:/java/VotaWeb-master/src/main/webapp/dynamic/jsp/admin/home.jsp</file>
+        <file>file:/P:/java/VotaWeb-master/src/main/java/controllers/Authenticate.java</file>
+        <file>file:/P:/java/VotaWeb-master/src/main/webapp/static/css/ballot_box.css</file>
+        <file>file:/P:/java/VotaWeb-master/src/main/webapp/dynamic/jsp/login.jsp</file>
+        <file>file:/P:/java/VotaWeb-master/src/main/java/controllers/SectionRequest.java</file>
+        <file>file:/P:/java/VotaWeb-master/src/main/webapp/WEB-INF/classes/import.sql</file>
+        <file>file:/P:/java/VotaWeb-master/src/main/java/libs/HttpParameterExtractor.java</file>
+        <file>file:/P:/java/VotaWeb-master/src/main/webapp/dynamic/jsp/ballot_box.jsp</file>
+        <file>file:/P:/java/VotaWeb-master/src/main/java/models/Election.java</file>
+        <file>file:/P:/java/VotaWeb-master/src/main/webapp/dynamic/jsp/voting_requests.jsp</file>
+        <file>file:/P:/java/VotaWeb-master/src/main/java/controllers/RequestResponse.java</file>
+        <file>file:/P:/java/VotaWeb-master/src/main/webapp/dynamic/jsp/inspection.jsp</file>
+        <file>file:/P:/java/VotaWeb-master/src/main/java/controllers/VotingRequest.java</file>
+        <file>file:/P:/java/VotaWeb-master/src/main/webapp/dynamic/jsp/home.jsp</file>
+        <file>file:/P:/java/VotaWeb-master/src/main/java/controllers/CreateUser.java</file>
+        <file>file:/P:/java/VotaWeb-master/src/main/java/helpers/BallotBoxDisplayHelper.java</file>
+        <file>file:/P:/java/VotaWeb-master/src/main/webapp/WEB-INF/web.xml</file>
+        <file>file:/P:/java/VotaWeb-master/src/main/java/controllers/ConfirmVote.java</file>
+        <file>file:/P:/java/VotaWeb-master/src/main/java/controllers/BallotBoxDisplay.java</file>
+        <file>file:/P:/java/VotaWeb-master/src/main/java/helpers/VotingRequestHelper.java</file>
+        <file>file:/P:/java/VotaWeb-master/src/main/java/models/VotingSession.java</file>
+        <file>file:/P:/java/VotaWeb-master/src/main/java/controllers/NewServlet.java</file>
+        <file>file:/P:/java/VotaWeb-master/src/main/java/controllers/BallotBox.java</file>
+        <file>file:/P:/java/VotaWeb-master/src/main/java/models/Post.java</file>
+        <file>file:/P:/java/VotaWeb-master/src/main/java/models/Vote.java</file>
+        <file>file:/P:/java/VotaWeb-master/src/main/java/controllers/Home.java</file>
+        <file>file:/P:/java/VotaWeb-master/src/main/java/controllers/EnableVoting.java</file>
+        <file>file:/P:/java/VotaWeb-master/src/main/java/models/Candidate.java</file>
       </group>
     </open-files>
   </auxiliary>
